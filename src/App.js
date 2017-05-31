@@ -40,7 +40,7 @@ class App extends Component {
 		<br/>
 		<TheForm textChange={this.textChange} inputName={this.state.inputName} inputEmail={this.state.inputEmail}/>
 		<br/> 
-		<TheButton clearInputs={this.clearInputs} inputName={this.state.inputName} inputEmail={this.state.inputEmail}/>
+		<TheButton clearInputs={this.state.clearInputs} inputName={this.state.inputName} inputEmail={this.state.inputEmail}/>
       </div>
     );
   }

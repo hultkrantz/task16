@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../App';
 import TheForm from '../form.js';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 
 // Check for render
@@ -16,29 +16,33 @@ test('The shallow render', () => {
 });
 // Check state name change
 test('user change name in state.', () => {
-	const input = 'Carl';
-	let wrapper = shallow(<TheForm />);
-	wrapper.find('input [id="formName"]').simulate('change', {
-		target: {
-			value: input,
-			name : "inputName"
-		},
-		type: 'change'
-	});
+	const newStateName = 'Carl',
+	event = {target: {
+			value: newStateName,
+			name : "inputName"},
+			type: 'change'
+		};
+	let wrapper = mount(<App/>),
+	input = wrapper.find('input#formName');
+	
+	input.simulate('change', event)
+	
 	let actual = wrapper.state('inputName');
-	expect(actual).toBe(input);
-})
+	expect(actual).toBe(newStateName);
+	})
 // Check state email change
 test('user change email in state.', () => {
-	const input = 'mail';
-	let wrapper = shallow(<TheForm />);
-	wrapper.find('input [id="formEmail"]').simulate('change', {
-		target: {
-			value: input,
-			name : "inputEmail"
-		},
-		type: 'change'
-	});
+	const newStateEmail = 'newEmail@gmail.com',
+		event = {target :{
+				value:newStateEmail,
+				name:'inputEmail'},
+				 type:'change'
+	};
+	let wrapper = mount(<App/>),
+	input = wrapper.find('input#formEmail');
+	
+	input.simulate('change', event	);
+	
 	let actual = wrapper.state('inputEmail');
-	expect(actual).toBe(input);
+	expect(actual).toBe(newStateEmail); 
 })
