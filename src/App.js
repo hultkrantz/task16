@@ -5,6 +5,30 @@ import TheForm from './form.js';
 import TheButton from './button.js';
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+			this.state = {
+				inputName : '',
+				inputEmail : ''
+		}
+		this.textChange = this.textChange.bind(this);
+		this.clearInputs = this.clearInputs.bind(this);
+	}
+	
+	textChange(e){
+		this.setState({
+			[e.target.name]:e.target.value
+		});
+	}
+	
+	clearInputs() {
+		this.setState({
+			inputName: '',
+			inputEmail: ''
+		})
+	}
+	
+	
   render() {
     return (
       <div className="App">
@@ -14,9 +38,9 @@ class App extends Component {
         </div>
 		<h3>Please sign in</h3>
 		<br/>
-		<TheForm/>
-		<br/>
-		<TheButton/>
+		<TheForm textChange={this.textChange} inputName={this.state.inputName} inputEmail={this.state.inputEmail}/>
+		<br/> 
+		<TheButton clearInputs={this.clearInputs} inputName={this.state.inputName} inputEmail={this.state.inputEmail}/>
       </div>
     );
   }

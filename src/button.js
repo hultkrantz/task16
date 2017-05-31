@@ -4,7 +4,7 @@ class TheButton extends Component{
 	
 	render() {
 		return (
-			<button type="button">Remove from state</button>
+			<button type="button" className="buttonClass" onClick={this.props.clearInputs}>Remove from state</button>
 		);
 	}
 }
