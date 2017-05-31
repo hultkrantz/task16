@@ -14,6 +14,7 @@ it('Does it render?', () => {
 test('The shallow render', () => {
 	shallow(<TheForm/>);
 });
+
 // Check state name change
 test('user change name in state.', () => {
 	const newStateName = 'Carl',
@@ -30,6 +31,7 @@ test('user change name in state.', () => {
 	let actual = wrapper.state('inputName');
 	expect(actual).toBe(newStateName);
 	})
+
 // Check state email change
 test('user change email in state.', () => {
 	const newStateEmail = 'newEmail@gmail.com',
