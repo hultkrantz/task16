@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TheForm from './form.js'
+import TheForm from './form.js';
+import TheButton from './button.js';
 
 class App extends Component {
   render() {
@@ -14,6 +15,8 @@ class App extends Component {
 		<h3>Please sign in</h3>
 		<br/>
 		<TheForm/>
+		<br/>
+		<TheButton/>
       </div>
     );
   }

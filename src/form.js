@@ -30,4 +30,14 @@ class TheForm extends Component{
 	}
 }
 
+class TheButton extends Component{
+	
+	render() {
+		return (
+			<button type="button">Remove from state</button>
+		);
+	}
+}
+
+
 export default TheForm;
