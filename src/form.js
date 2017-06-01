@@ -13,7 +13,7 @@ class TheForm extends Component{
 					<input type="text" id="formEmail" name="inputEmail" onChange={this.props.textChange} value={this.props.inputEmail}/>
 				</form>
 			</div> 
-			);
+			); 
 	}
 }
 
